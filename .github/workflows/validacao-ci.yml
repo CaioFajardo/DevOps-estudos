@@ -22,3 +22,6 @@ jobs:
         run: |
           test -f index.html && echo "HTML encontrado!" &&
           test -f style.css && echo "CSS encontrado!"
+
+      - name: Teste de falha proposital
+        run: comando_que_nao_existe
