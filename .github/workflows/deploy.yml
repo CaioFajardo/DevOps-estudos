@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Pipeline Projeto DevOps
 
 on:
   push:
@@ -7,11 +7,16 @@ on:
     branches: ["main"]
 
 jobs:
-  validacao-estatica:
+  inspecao-e-validacao:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
+
+      - name: Explorando o Runner (SO e RAM)
+        run: |
+          lsb_release -a
+          free -h
 
       - name: Verificar arquivos essenciais
         run: |
